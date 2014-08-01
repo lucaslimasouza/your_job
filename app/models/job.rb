@@ -1,9 +1,10 @@
 class Job < ActiveRecord::Base
-  has_one :period
-  has_one :category
-  has_one :wage
-  has_one :city
+  belongs_to :period
+  belongs_to :category
+  belongs_to :wage
+  belongs_to :city
+  belongs_to :customer
 
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :period_id, :wage_id, :city_id
 
 end

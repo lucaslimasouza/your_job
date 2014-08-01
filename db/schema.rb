@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725014420) do
+ActiveRecord::Schema.define(version: 20140729004935) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -51,15 +51,17 @@ ActiveRecord::Schema.define(version: 20140725014420) do
     t.string   "apply_by"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "periody_id"
+    t.integer  "period_id"
     t.integer  "category_id"
     t.integer  "wage_id"
     t.integer  "city_id"
+    t.integer  "customer_id"
   end
 
   add_index "jobs", ["category_id"], name: "index_jobs_on_category_id"
   add_index "jobs", ["city_id"], name: "index_jobs_on_city_id"
-  add_index "jobs", ["periody_id"], name: "index_jobs_on_periody_id"
+  add_index "jobs", ["customer_id"], name: "index_jobs_on_customer_id"
+  add_index "jobs", ["period_id"], name: "index_jobs_on_period_id"
   add_index "jobs", ["wage_id"], name: "index_jobs_on_wage_id"
 
   create_table "periods", force: true do |t|

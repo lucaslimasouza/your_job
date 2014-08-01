@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Job, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'validations' do
+
+    it "should be a invalid object" do
+      job = Job.new({title: "Vaga Pintor", description:"Aprendiz"})
+
+      job.save
+      
+      expect(job.valid?).to eq false
+    end
+
+  end
 end

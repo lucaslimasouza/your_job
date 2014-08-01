@@ -1,1 +1,29 @@
-%h1="Emprega-me"
+%section
+  .container-fluid
+    .row.panel-body
+      .col-lg-3
+        %span.glyphicon.glyphicon-search.pull-right.fa-1x
+      .col-lg-9
+        =form_tag home_index_path, method: :get do 
+          .col-lg-9
+            =text_field_tag :q, @search_code, placeholder: 'Palavras chaves, cargos, cidades', autofocus: true, class: 'panel-body-input-search'
+            ="Tente:Auxiliar,Vendendor, Mecânico..."
+          .col-lg-3
+            =submit_tag 'Buscar', name: nil, class: 'btn btn-primary btn-lg pull-right'
+
+%section
+  .container-fluid
+  -@jobs.each do |job|
+    .row.panel.panel-body
+      .col-lg-8
+        %p
+          %h4
+            %strong
+              = link_to "#{job.title}", job
+        %p
+          %span.glyphicon.glyphicon-dashboard=" #{job.period.name} |"
+          %span.glyphicon.glyphicon-usd=" #{job.wage.name} |"
+          %span.glyphicon.glyphicon-home=" #{job.city.name} |" 
+          %span.glyphicon.glyphicon-calendar=" Postado a #{(Date.today - job.created_at.to_date).to_i} dias atrás"
+      .col-lg-4
+        %p.pull-right= job.created_at.strftime("%v")

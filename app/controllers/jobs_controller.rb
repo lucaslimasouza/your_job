@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
-  before_filter :authenticate_customer!
+  before_filter :authenticate_customer!, only: [:index, :edit, :update, :destroy, :create, :new]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @jobs = current_customer.jobs
     respond_with @jobs
@@ -39,8 +39,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :apply_by, :description, :period_id, :wage_id, city_id:)
-    
+    params.require(:job).permit(:title, :apply_by, :description, :period_id, :wage_id, :city_id)
   end
 
   def set_job

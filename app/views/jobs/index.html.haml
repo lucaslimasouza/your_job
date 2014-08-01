@@ -1,0 +1,20 @@
+%table
+  %thead
+    %tr
+      %th="Título"
+      %th="Período"
+      %th="Salário"
+      %th="Cidade"
+      %th="Exibir"
+      %th="Editar"
+      %th="Apagar"
+  %tbody
+    -@jobs.each do |job|
+      %tr
+        %td=job.title
+        %td=job.period.name
+        %td=job.wage.name
+        %td=job.city.name
+        %td=link_to "Exibir", job
+        %td=link_to "Editar", edit_job_path(job)
+        %td=link_to "Apagar",job, method: :delete, data: { confirm: 'Are you sure?' }

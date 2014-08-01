@@ -1,0 +1,9 @@
+=simple_form_for @job do |f|
+  =f.input :title
+  =f.association :period, as: :radio_buttons
+  =f.association :wage, prompt: "Selecione"
+  =f.association :city, prompt: "Selecione uma cidade"
+  =f.input :description, as: :text
+  =f.input :apply_by 
+  =f.button :submit
+  
