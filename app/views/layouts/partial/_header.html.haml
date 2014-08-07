@@ -1,6 +1,14 @@
 %header
   .navbar.navbar-default
     .container-fluid
-      =link_to "Emprega.me", root_path, class: "navbar-brand"
-      %p.navbar-text.navbar-right
-        =link_to "Publicar oferta de emprego", new_job_path, class: "btn btn-default navbar-btn"
+      .row
+        .col-lg-8
+          =link_to "Emprega.me", root_path, class: "navbar-brand"
+        .col-lg-4
+          %p.navbar-text.navbar-right
+            =link_to "Publicar oferta de emprego", new_job_path, class: "btn btn-warning navbar-btn"
+
+            -if customer_signed_in?
+              = link_to "Sair", destroy_customer_session_path, method: :delete, class: "btn btn-danger"
+            -else
+              = link_to "Entrar", customer_session_path, class: "btn btn-primary"

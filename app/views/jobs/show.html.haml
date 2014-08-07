@@ -1,11 +1,32 @@
-=@job.title
-%br
-=@job.period.name
-%br
-=@job.wage.name
-%br
-=@job.city.name
-%br
-=@job.customer.name
-%br
-=@job.description
+.container-fluid
+  .row.panel.panel-info
+    .col-lg-12.panel-heading
+      %p
+        %h3
+          %strong
+            =@job.title
+      %p
+        %span.glyphicon.glyphicon-map-marker=" #{@job.city.name} |"
+        %span.glyphicon.glyphicon-calendar=" Postado a #{(Date.today - @job.created_at.to_date).to_i} dias atrás"
+
+  .row.panel
+    .col-lg-8.panel-body
+      .row
+        .col-lg-12.well
+          %p
+            %span.glyphicon.glyphicon-calendar=" #{@job.created_at.strftime("%v")} | "
+            %span.glyphicon.glyphicon-dashboard=" #{@job.period.name} |"
+            %span.glyphicon.glyphicon-usd=" #{@job.wage.name}"
+      .row.panel.panel-default
+        .col-lg-12.panel-body
+          =simple_format @job.description
+
+    .col-lg-4
+      .row.panel-body
+        %p.panel.panel-warning
+          %h4=@job.customer.name
+      .row.panel-body
+        %p.well
+          ="Como se candidatar:"
+          ="enviar um email para: #{@job.apply_by}"
+            

@@ -1,4 +1,12 @@
-%table
+.container-fluid
+  .row.panel.panel-info
+    .col-lg-12.panel-heading
+      %p
+        %h3
+          %strong
+            ="Minhas ofertas de vagas"
+
+%table.table.table-striped
   %thead
     %tr
       %th="Título"
@@ -15,6 +23,6 @@
         %td=job.period.name
         %td=job.wage.name
         %td=job.city.name
-        %td=link_to "Exibir", job
-        %td=link_to "Editar", edit_job_path(job)
-        %td=link_to "Apagar",job, method: :delete, data: { confirm: 'Are you sure?' }
+        %td=link_to image_tag("/images/show_icon.png"), job
+        %td=link_to image_tag("/images/edit_icon.png"), edit_job_path(job)
+        %td=link_to image_tag("/images/delete_icon.png"),job, method: :delete, data: { confirm: 'Você tem certeza?' }

@@ -2,12 +2,12 @@
   .container-fluid
     .row.panel-body
       .col-lg-3
-        %span.glyphicon.glyphicon-search.pull-right.fa-1x
+        %span.pull-right
       .col-lg-9
         =form_tag home_index_path, method: :get do 
           .col-lg-9
-            =text_field_tag :q, @search_code, placeholder: 'Palavras chaves, cargos, cidades', autofocus: true, class: 'panel-body-input-search'
-            ="Tente:Auxiliar,Vendendor, Mecânico..."
+            =text_field_tag :q, @search_code, placeholder: '', autofocus: true, class: 'panel-body-input-search'
+            = "Digite nome de cargo ou nome da cidade onde procura emprego"
           .col-lg-3
             =submit_tag 'Buscar', name: nil, class: 'btn btn-primary btn-lg pull-right'
 
@@ -23,7 +23,7 @@
         %p
           %span.glyphicon.glyphicon-dashboard=" #{job.period.name} |"
           %span.glyphicon.glyphicon-usd=" #{job.wage.name} |"
-          %span.glyphicon.glyphicon-home=" #{job.city.name} |" 
+          %span.glyphicon.glyphicon-map-marker=" #{job.city.name} |" 
           %span.glyphicon.glyphicon-calendar=" Postado a #{(Date.today - job.created_at.to_date).to_i} dias atrás"
       .col-lg-4
         %p.pull-right= job.created_at.strftime("%v")

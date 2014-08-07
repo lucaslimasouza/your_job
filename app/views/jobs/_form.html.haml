@@ -1,9 +1,18 @@
-=simple_form_for @job do |f|
-  =f.input :title
-  =f.association :period, as: :radio_buttons
-  =f.association :wage, prompt: "Selecione"
-  =f.association :city, prompt: "Selecione uma cidade"
-  =f.input :description, as: :text
-  =f.input :apply_by 
-  =f.button :submit
-  
+.row.panel
+  .col-lg-10.box-form
+    =simple_form_for(@job, html: {class: 'form-vertical', role: 'form'}) do |f|
+      .form-group
+        =f.input :title
+      .form-group
+        =f.association :period, prompt: "Selecione o período"
+      .form-group
+        =f.association :wage, prompt: "Selecione o salário"
+      .form-group
+        =f.association :city, prompt: "Selecione uma cidade"
+      .form-group
+        =f.input :apply_by 
+      .form-group
+        =f.input :description, as: :text, :input_html => { 'rows' => 30, 'cols' => 10 }
+      .form-group
+        =f.button :submit
+    
