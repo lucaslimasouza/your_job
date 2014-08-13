@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729004935) do
+ActiveRecord::Schema.define(version: 20140813213659) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -42,12 +45,12 @@ ActiveRecord::Schema.define(version: 20140729004935) do
     t.datetime "updated_at"
   end
 
-  add_index "customers", ["email"], name: "index_customers_on_email", unique: true
-  add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
+  add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
 
   create_table "jobs", force: true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.string   "apply_by"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,11 +61,11 @@ ActiveRecord::Schema.define(version: 20140729004935) do
     t.integer  "customer_id"
   end
 
-  add_index "jobs", ["category_id"], name: "index_jobs_on_category_id"
-  add_index "jobs", ["city_id"], name: "index_jobs_on_city_id"
-  add_index "jobs", ["customer_id"], name: "index_jobs_on_customer_id"
-  add_index "jobs", ["period_id"], name: "index_jobs_on_period_id"
-  add_index "jobs", ["wage_id"], name: "index_jobs_on_wage_id"
+  add_index "jobs", ["category_id"], name: "index_jobs_on_category_id", using: :btree
+  add_index "jobs", ["city_id"], name: "index_jobs_on_city_id", using: :btree
+  add_index "jobs", ["customer_id"], name: "index_jobs_on_customer_id", using: :btree
+  add_index "jobs", ["period_id"], name: "index_jobs_on_period_id", using: :btree
+  add_index "jobs", ["wage_id"], name: "index_jobs_on_wage_id", using: :btree
 
   create_table "periods", force: true do |t|
     t.string   "name"
