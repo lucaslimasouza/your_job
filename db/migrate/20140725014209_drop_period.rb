@@ -1,5 +1,5 @@
 class DropPeriod < ActiveRecord::Migration
   def change
-    drop_table :periods
+    # drop_table :periods
   end
 end
