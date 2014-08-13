@@ -1,11 +1,24 @@
+$color: #f4f4f4;
+
 .panel-body-input-search{
   width: 100%;
   height: 70px;
   font-size: 40px;
   border: 0;
   border-bottom: 1px solid #000;
+  background-color: $color;
 }
 
 .panel-body-input-search:focus{
   outline: 0;
+}
+
+.box-search{
+  margin-top: -20px;
+  padding-top: 40px;
+  background-color: $color;
+  height: 210px;
+}
+.box-white{
+  background-color: #fff;
 }

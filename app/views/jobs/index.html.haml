@@ -1,3 +1,10 @@
+%ol.breadcrumb
+  %li
+    =link_to "Página inicial", root_path
+  %li.active
+    ="Minhas vagas"
+
+
 .container-fluid
   .row.panel.panel-info
     .col-lg-12.panel-heading
@@ -5,24 +12,24 @@
         %h3
           %strong
             ="Minhas ofertas de vagas"
-
-%table.table.table-striped
-  %thead
-    %tr
-      %th="Título"
-      %th="Período"
-      %th="Salário"
-      %th="Cidade"
-      %th="Exibir"
-      %th="Editar"
-      %th="Apagar"
-  %tbody
-    -@jobs.each do |job|
-      %tr
-        %td=job.title
-        %td=job.period.name
-        %td=job.wage.name
-        %td=job.city.name
-        %td=link_to image_tag("/images/show_icon.png"), job
-        %td=link_to image_tag("/images/edit_icon.png"), edit_job_path(job)
-        %td=link_to image_tag("/images/delete_icon.png"),job, method: :delete, data: { confirm: 'Você tem certeza?' }
+  .row
+    %table.table.table-striped
+      %thead
+        %tr
+          %th="Título"
+          %th="Período"
+          %th="Salário"
+          %th="Cidade"
+          %th="Exibir"
+          %th="Editar"
+          %th="Apagar"
+      %tbody
+        -@jobs.each do |job|
+          %tr
+            %td=job.title
+            %td=job.period.name
+            %td=job.wage.name
+            %td=job.city.name
+            %td=link_to image_tag("/images/show_icon.png"), job
+            %td=link_to image_tag("/images/edit_icon.png"), edit_job_path(job)
+            %td=link_to image_tag("/images/delete_icon.png"),job, method: :delete, data: { confirm: 'Você tem certeza?' }

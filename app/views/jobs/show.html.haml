@@ -1,3 +1,12 @@
+%ol.breadcrumb
+  %li
+    =link_to "Página inicial", root_path
+  -if customer_signed_in?
+    %li
+      =link_to "Minhas vagas", jobs_path    
+  %li.active
+    ="Oferta publicada"
+
 .container-fluid
   .row.panel.panel-info
     .col-lg-12.panel-heading
@@ -29,4 +38,7 @@
         %p.well
           ="Como se candidatar:"
           ="enviar um email para: #{@job.apply_by}"
+      .row.panel-body
+    
+        =social_share_button_tag(@job.title, photo: "/images/brand.png")
             

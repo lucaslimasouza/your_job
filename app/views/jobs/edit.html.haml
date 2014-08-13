@@ -1,1 +1,10 @@
-=render 'form'
+%ol.breadcrumb
+  %li
+    =link_to "Página inicial", root_path
+  %li
+    =link_to "Minhas vagas", jobs_path    
+  %li.active
+    ="Editar oferta"
+
+.container-fluid
+  =render 'form'
