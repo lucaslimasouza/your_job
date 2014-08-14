@@ -40,5 +40,5 @@
           ="enviar um email para: #{@job.apply_by}"
       .row.panel-body
     
-        =social_share_button_tag(@job.title, photo: "/images/brand.png")
+        =social_share_button_tag(@job.title, image: "/images/brand_face.png", photo:"/images/brand_face.png", :'data-caption' => @job.title )
             
