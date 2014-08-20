@@ -8,11 +8,36 @@
   <meta content="http://empregame.herokuapp.com/images/brand_face.png" property="og:image">
   <meta content="pt_BR" property="og:locale">
   <meta content="Emprega-me" property="og:site_name">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50409152-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body>
   <%= render "/layouts/partial/header" %>
 
   <%= yield %>
 
+  <footer>
+
+    <h5> compartilhe</h5>
+        <%=social_share_button_tag("Empregame.net")%>
+    
+  <div class="navbar-text navbar-right">
+    <%= link_to "Sobre", home_about_path %> | 
+    <%= link_to "Política de Privacidade", home_privacy_path %>
+  </div>
+
+  <p>&copy; Empregame 2014 | 
+    Apoio <a href="http://www.devapweb.com" target="blank">DevapWeb</a>
+  </p>
+
+  </footer>
 </body>
 </html>

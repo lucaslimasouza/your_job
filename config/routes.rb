@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :customers, controllers: {registrations: "customers/registrations"}
   resources :jobs
   get 'home/index'
+  get 'home/about'
+  get  'home/privacy'
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

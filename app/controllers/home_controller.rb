@@ -5,4 +5,12 @@ class HomeController < ApplicationController
     @jobs = query.blank? ? Job.all : Job.where("title ILIKE ? ", "%#{query}%")
     respond_with @jobs
   end
+
+  def about
+  	
+  end
+
+  def privacy
+  	
+  end
 end

@@ -2,12 +2,12 @@
   .navbar.navbar-inverse{role:"navigation"}
     .container-fluid
       .row
-        .col-lg-8
+        .col-lg-6
           =link_to image_tag("/images/brand_face.png"), root_path, class: "navbar-brand"
-        .col-lg-4
-          %p.navbar-text.navbar-right
-            =link_to "Publicar oferta de emprego", new_job_path, class: "btn btn-warning navbar-btn"
 
+        .col-lg-6
+          %p.navbar-text.navbar-right
+            =link_to "Publicar oferta de emprego - Grátis", new_job_path, class: "btn btn-warning navbar-btn"
             -if customer_signed_in?
               = link_to "Sair", destroy_customer_session_path, method: :delete, class: "btn btn-danger"
             -else
