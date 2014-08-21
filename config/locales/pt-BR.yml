@@ -1,0 +1,31 @@
+pt-BR:
+  activerecord:
+    models:
+      category: Categoria
+      city: Cidade
+      customer: Cliente
+      job: Oferta de emprego
+      period: Período
+      wage: Sálário
+
+    attributes:
+      category:
+        name: Nome
+      city:
+        name: Nome
+      customer:
+        name: Nome
+        password: Senha
+        password_confirmation: Confirme a senha
+      job:
+        title: Título
+        description: Descrição
+        period_id: Período
+        wage: Salário
+        city: Cidade
+        apply_by: Como as pessoas se aplicam para essa oferta?
+      period:
+        name: Nome
+      wage:
+        name: Nome
+

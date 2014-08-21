@@ -9,7 +9,7 @@
             =form_tag home_index_path, method: :get do 
               .col-lg-9
                 =text_field_tag :q, @search_code, placeholder: '', autofocus: true, class: 'panel-body-input-search'
-                %strong="Digite nome de cargo ou nome da cidade onde procura emprego"
+                %strong="Digite o cargo ou nome da cidade onde procura emprego"
               .col-lg-3
                 =submit_tag 'Buscar', name: nil, class: 'btn btn-primary btn-lg pull-right'
   .row

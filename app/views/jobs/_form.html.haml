@@ -11,7 +11,7 @@
         .form-group
           =f.association :city, prompt: "Selecione uma cidade"
         .form-group
-          =f.input :apply_by 
+          =f.input :apply_by, placeholder: "Ex: enviar email para empresa@mail.com"
         .form-group
           =f.input :description, as: :text, :input_html => { 'rows' => 30, 'cols' => 10 }
         .form-group

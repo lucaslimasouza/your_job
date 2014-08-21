@@ -22,21 +22,21 @@
 <body>
   <%= render "/layouts/partial/header" %>
 
-<!-- <div class="container-fluid">
+<div class="container-fluid">
   <div class="row-fluid">
   
     <div class="span12 margin-message">
       
       <% if flash[:notice].present? %>
-        <div class="alert alert-success margin-message">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <div class="alert alert-success box-message">
+          <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
           <p id="notice"><%= flash[:notice] %> </p>
         </div>
       <% end %>
         
       <% if alert.present? %>
-        <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <div class="alert alert-danger box-message">
+        <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
           <p id="alert"><%= alert %> </p>
         </div>
       <% end %>
@@ -46,7 +46,6 @@
   </div>
 
 </div>
- -->
   
 
   <%= yield %>
