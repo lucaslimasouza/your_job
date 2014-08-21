@@ -22,20 +22,44 @@
 <body>
   <%= render "/layouts/partial/header" %>
 
+<!-- <div class="container-fluid">
+  <div class="row-fluid">
+  
+    <div class="span12 margin-message">
+      
+      <% if flash[:notice].present? %>
+        <div class="alert alert-success margin-message">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <p id="notice"><%= flash[:notice] %> </p>
+        </div>
+      <% end %>
+        
+      <% if alert.present? %>
+        <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <p id="alert"><%= alert %> </p>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>
+ -->
+  
+
   <%= yield %>
 
   <footer>
 
     <h5> compartilhe</h5>
         <%=social_share_button_tag("Empregame.net")%>
-    
-  <div class="navbar-text navbar-right">
+  
+  <p>
+    &copy; Empregame 2014 | 
     <%= link_to "Sobre", home_about_path %> | 
-    <%= link_to "Política de Privacidade", home_privacy_path %>
-  </div>
-
-  <p>&copy; Empregame 2014 | 
-    Apoio <a href="http://www.devapweb.com" target="blank">DevapWeb</a>
+    Apoio <a href="http://www.devapweb.com" target="blank">devapWeb</a>
   </p>
 
   </footer>
